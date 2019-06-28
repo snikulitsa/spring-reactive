@@ -36,10 +36,11 @@ dependencies {
 
     // Reactive Web
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb-reactive'
 
-    // R2DBC
-    //implementation 'org.springframework.data:spring-data-r2dbc:1.0.0.M2'
-    //implementation 'org.springframework:spring-tx:5.1.8.RELEASE'
+    // R2DBC TODO does not working
+    // implementation 'org.springframework.data:spring-data-r2dbc:1.0.0.M2'
+    // implementation 'org.springframework:spring-tx:5.1.8.RELEASE'
     implementation 'org.springframework.boot.experimental:spring-boot-starter-data-r2dbc:0.1.0.M1'
     implementation 'org.springframework.boot.experimental:spring-boot-actuator-autoconfigure-r2dbc:0.1.0.M1'
     implementation 'io.r2dbc:r2dbc-postgresql:1.0.0.M7'

@@ -1,7 +1,6 @@
-package com.nikulitsa.springreactive.service;
+package com.nikulitsa.springreactive.service.r2dbc;
 
-import com.nikulitsa.springreactive.model.Organization;
-import com.nikulitsa.springreactive.repository.OrganizationRepository;
+import com.nikulitsa.springreactive.model.r2dbc.Organization;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

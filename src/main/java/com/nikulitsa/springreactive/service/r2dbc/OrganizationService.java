@@ -1,6 +1,6 @@
-package com.nikulitsa.springreactive.service;
+package com.nikulitsa.springreactive.service.r2dbc;
 
-import com.nikulitsa.springreactive.model.Organization;
+import com.nikulitsa.springreactive.model.r2dbc.Organization;
 import reactor.core.publisher.Flux;
 
 /**

@@ -19,7 +19,7 @@ public class SomeObserver extends DefaultObserver<Mono<BitCoinResponse>> {
 
     @Override
     public void onNext(Mono<BitCoinResponse> responseMono) {
-        responseMono.subscribe(SomeObserver::logInfo);
+        responseMono.subscribe(this::logInfo);
     }
 
     @Override
@@ -32,7 +32,7 @@ public class SomeObserver extends DefaultObserver<Mono<BitCoinResponse>> {
         LOGGER.info("Finish!");
     }
 
-    private static void logInfo(BitCoinResponse response) {
+    private void logInfo(BitCoinResponse response) {
         LOGGER.info(response.toString());
     }
 }

@@ -1,4 +1,4 @@
-package com.nikulitsa.springreactive.model;
+package com.nikulitsa.springreactive.model.r2dbc;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

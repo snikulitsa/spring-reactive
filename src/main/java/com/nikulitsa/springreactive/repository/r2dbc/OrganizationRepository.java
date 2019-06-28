@@ -1,6 +1,6 @@
-package com.nikulitsa.springreactive.repository;
+package com.nikulitsa.springreactive.repository.r2dbc;
 
-import com.nikulitsa.springreactive.model.Organization;
+import com.nikulitsa.springreactive.model.r2dbc.Organization;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import org.springframework.stereotype.Repository;
 

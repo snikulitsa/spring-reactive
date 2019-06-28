@@ -1,10 +1,19 @@
+# My own properties
 reactive:
   db:
-    username: $DB_USERNAME
-    password: $DB_PASSWORD
-    host: $DB_HOST
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    host: ${DB_HOST}
     port: 5432
     database: "postgres"
   sandbox:
     akka-sandbox-enabled: false
     rx-java-sandbox-enabled: false
+
+# Spring Ecosystem properties
+## MongoDB Reactive
+spring:
+  data:
+    mongodb:
+      host: ${MONGO_DB_HOST}
+      port: 27017
