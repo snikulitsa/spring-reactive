@@ -1,0 +1,63 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.6.RELEASE'
+    id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.nikulitsa'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+    developmentOnly
+    runtimeClasspath {
+        extendsFrom developmentOnly
+    }
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://repo.spring.io/milestone/'
+    }
+}
+
+dependencyManagement {
+    imports {
+       mavenBom 'org.springframework.data:spring-data-releasetrain:Lovelace-RELEASE'
+    }
+}
+
+dependencies {
+
+    // Reactive Web
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+    // R2DBC
+    //implementation 'org.springframework.data:spring-data-r2dbc:1.0.0.M2'
+    //implementation 'org.springframework:spring-tx:5.1.8.RELEASE'
+    implementation 'org.springframework.boot.experimental:spring-boot-starter-data-r2dbc:0.1.0.M1'
+    implementation 'org.springframework.boot.experimental:spring-boot-actuator-autoconfigure-r2dbc:0.1.0.M1'
+    implementation 'io.r2dbc:r2dbc-postgresql:1.0.0.M7'
+    implementation 'io.r2dbc:r2dbc-spi:1.0.0.M7'
+
+    // Reactive Java
+    implementation 'io.reactivex.rxjava2:rxjava'
+    implementation 'com.typesafe.akka:akka-actor_2.13:2.6.0-M3'
+
+    // Dev Tools
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    // Code generation
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+    annotationProcessor 'org.projectlombok:lombok'
+    compileOnly 'org.projectlombok:lombok'
+
+    // Tests
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'io.projectreactor:reactor-test'
+}
