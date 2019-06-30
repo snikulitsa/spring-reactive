@@ -15,13 +15,13 @@ import java.util.List;
 @RequiredArgsConstructor
 public class BagServiceImpl implements BagService {
 
-    private final BagRepository bagRepository;
+    private final BagRepository repository;
     private final ItemService itemService;
 
     @Override
     public Mono<BagWithItemsDTO> getBugWithItems(String bagId) {
 
-        Mono<Bag> bag = bagRepository.findById(bagId);
+        Mono<Bag> bag = repository.findById(bagId);
         Flux<Item> items = itemService.findAllByBagId(bagId);
 
         // TODO not sure it is right...
@@ -36,5 +36,10 @@ public class BagServiceImpl implements BagService {
                             itemList
                     );
                 });
+    }
+
+    @Override
+    public Mono<Bag> save(Bag bag) {
+        return repository.save(bag);
     }
 }
