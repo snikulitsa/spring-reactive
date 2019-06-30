@@ -20,7 +20,7 @@ public class BagController {
     }
 
     @PutMapping
-    public Mono<Bag> save(Bag bag) {
+    public Mono<Bag> save(@RequestBody Bag bag) {
         return service.save(bag);
     }
 }
